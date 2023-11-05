@@ -1,0 +1,76 @@
+Docker is a containerization platform that allows you to create and manage containers, which are lightweight and portable environments for running applications. Containers are isolated from the host system and each other, making it easy to package applications and their dependencies into a single unit. Here's an overview of Docker container environments and the installation procedure (theory):
+
+Docker Container Environment:
+
+Containers: Containers are instances of Docker images. An image is a standalone package that includes everything needed to run a piece of software, including the code, a runtime, libraries, and system tools. Containers provide consistency and isolation, allowing applications to run reliably across different environments.
+
+Isolation: Containers are isolated from each other and from the host system. They have their own file system, processes, and network, but share the host's kernel. This isolation makes it possible to run multiple containers on a single host without conflicts.
+
+Portability: Docker containers are highly portable. You can create an image on one system and run it on another without worrying about compatibility issues. This is especially useful for ensuring consistent development, testing, and production environments.
+
+Microservices: Docker is often used in microservices architectures. Each microservice can run in its own container, making it easier to develop, deploy, and scale individual components of an application independently.
+
+Orchestration: Docker can be used with orchestration tools like Kubernetes and Docker Swarm to manage the deployment, scaling, and load balancing of containers across clusters of machines.
+
+Installation Procedure (Theory):
+
+Here's an overview of how to install Docker on a typical Linux system (e.g., Ubuntu):
+
+Update System Packages:
+
+Before installing Docker, it's a good practice to update the system's package list and upgrade installed packages to the latest versions. You can use the following commands:
+
+bash
+Copy code
+sudo apt update
+sudo apt upgrade
+Install Prerequisites:
+
+Docker requires some prerequisites to be installed. Install them using:
+
+bash
+Copy code
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+Add Docker Repository:
+
+Add the Docker repository to the package manager:
+
+bash
+Copy code
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+Then add the Docker repository:
+
+bash
+Copy code
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+Install Docker:
+
+Update the package list and install Docker:
+
+bash
+Copy code
+sudo apt update
+sudo apt install docker-ce
+Start and Enable Docker:
+
+Start the Docker service and enable it to start on boot:
+
+bash
+Copy code
+sudo systemctl start docker
+sudo systemctl enable docker
+Verify Installation:
+
+Check if Docker is installed and running properly by running the following command:
+
+bash
+Copy code
+docker --version
+You can also verify Docker by running a simple test container:
+
+bash
+Copy code
+docker run hello-world
+If everything is set up correctly, you'll see a message confirming the successful installation.
+
+Please note that Docker installation procedures may vary slightly depending on the Linux distribution you are using. Additionally, Docker has versions for other operating systems, including Windows and macOS, and you can refer to Docker's official documentation for installation on those platforms.

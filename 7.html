@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign-Up Page</title>
+</head>
+<body>
+    <h1>Sign-Up</h1>
+    <form id="signup-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+        <br>
+        <button type="button" id="signup-button">Sign Up</button>
+    </form>
+
+    <div id="success-message" style="display: none;">
+        <p>Sign-up successful!</p>
+    </div>
+
+    <script>
+        document.getElementById('signup-button').addEventListener('click', function () {
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // You can perform client-side validation here
+
+            const userData = {
+                username,
+                email,
+                password
+            };
+
+            // Simulate a successful registration
+            // In a real application, this data would be sent to the server for processing
+            // and the success message would be displayed based on the server's response.
+
+            // Here, we simply show a success message on the page.
+            document.getElementById('signup-form').style.display = 'none';
+            document.getElementById('success-message').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

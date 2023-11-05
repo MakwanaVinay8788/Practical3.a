@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Mobile Website</title>
+    <!-- Include jQuery and jQuery Mobile libraries -->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.5.0/jquery.mobile-1.5.0.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.5.0/jquery.mobile-1.5.0.min.js"></script>
+</head>
+<body>
+    <!-- Start a jQuery Mobile page -->
+    <div data-role="page" id="home-page">
+        <div data-role="header">
+            <h1>Welcome to My Mobile Website</h1>
+        </div>
+
+        <div data-role="content">
+            <p>This is a simple mobile webpage created with jQuery Mobile.</p>
+            <ul data-role="listview">
+                <li><a href="#about-page">About Us</a></li>
+                <li><a href="#contact-page">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div data-role="footer">
+            <h4>&copy; 2023 Your Company</h4>
+        </div>
+    </div>
+
+    <!-- About Us Page -->
+    <div data-role="page" id="about-page">
+        <div data-role="header">
+            <a href="#home-page" data-icon="home">Home</a>
+            <h1>About Us</h1>
+        </div>
+
+        <div data-role="content">
+            <p>Welcome to the About Us page. We are a mobile website!</p>
+        </div>
+
+        <div data-role="footer">
+            <h4>&copy; 2023 Your Company</h4>
+        </div>
+    </div>
+
+    <!-- Contact Us Page -->
+    <div data-role="page" id="contact-page">
+        <div data-role="header">
+            <a href="#home-page" data-icon="home">Home</a>
+            <h1>Contact Us</h1>
+        </div>
+
+        <div data-role="content">
+            <p>Contact us by emailing <a href="mailto:contact@example.com">contact@example.com</a>.</p>
+        </div>
+
+        <div data-role="footer">
+            <h4>&copy; 2023 Your Company</h4>
+        </div>
+    </div>
+</body>
+</html>

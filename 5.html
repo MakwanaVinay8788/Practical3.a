@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AJAX POST Example</title>
+</head>
+<body>
+    <h1>Data List</h1>
+    <ul id="data-list">
+        <!-- Data will be displayed here -->
+    </ul>
+
+    <script>
+        // Function to make an AJAX POST request
+        function fetchData() {
+            // Data to be sent in the POST request (if needed)
+            const dataToSend = {
+                key: 'value',
+            };
+
+            fetch('your_server_endpoint', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json', // Adjust the content type as needed
+                },
+                body: JSON.stringify(dataToSend), // Convert data to JSON format (if needed)
+            })
+            .then(response => response.json()) // Parse the response as JSON
+            .then(data => {
+                // Data received from the server
+                const dataList = document.getElementById('data-list');
+
+                // Clear any existing data in the list
+                dataList.innerHTML = '';
+
+                // Loop through the data and add it to the list
+                data.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = item;
+                    dataList.appendChild(listItem);
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        // Call the fetchData function when the page loads
+        fetchData();
+    </script>
+</body>
+</html>
